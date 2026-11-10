@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginModule>
+  <!-- Wwise 2019.2.15 rejects DisplayName on EffectPlugin. Keep Name as the
+       effect label for all tested versions; DisplayName on Property is valid.
+       Do not reintroduce the newer EffectPlugin attribute when editing this XML. -->
+  <EffectPlugin Name="Crossfeed" CompanyID="64" PluginID="4106">
+    <PluginInfo MenuPath="Crossfeed">
+      <PlatformSupport><Platform Name="Windows"><CanBeInsertOnBusses>true</CanBeInsertOnBusses><CanBeInsertOnAudioObjects>false</CanBeInsertOnAudioObjects><CanBeRendered>true</CanBeRendered></Platform></PlatformSupport>
+    </PluginInfo>
+    <Properties>
+      <Property Name="Feed" Type="Real32" DisplayName="Feed">
+        <UserInterface Step="0.01" Fine="0.001" Decimals="3"/>
+        <DefaultValue>0.316227766</DefaultValue><AudioEnginePropertyID>0</AudioEnginePropertyID>
+        <Restrictions><ValueRestriction><Range Type="Real32"><Min>0</Min><Max>1</Max></Range></ValueRestriction></Restrictions>
+      </Property>
+      <Property Name="GainDb" Type="Real32" DisplayName="Gain (dB)">
+        <UserInterface Step="0.1" Fine="0.01" Decimals="2"/>
+        <DefaultValue>0</DefaultValue><AudioEnginePropertyID>2</AudioEnginePropertyID>
+        <Restrictions><ValueRestriction><Range Type="Real32"><Min>-6</Min><Max>0</Max></Range></ValueRestriction></Restrictions>
+      </Property>
+    </Properties>
+  </EffectPlugin>
+</PluginModule>
