@@ -8,13 +8,15 @@ Crossfeed 是基于滤波、短延迟与静态功率归一化的 Wwise 耳机总
 
 戴上耳机，保持播放器音量不变，依次试听：
 
-- [原声 · Crossfeed 关闭](results/source.wav)
-- [Crossfeed · Static Power＋Soft Clip](results/crossfeed.wav)
-- [Wwise Spread · 对侧 −10 dB，RMS 与原声匹配](results/spread-minus10dB.wav)
+
+- [source音频](https://github.com/user-attachments/files/34624749/source.wav)
+- [crossfeed.wav](https://github.com/user-attachments/files/34625010/crossfeed.wav)
+- [spread-10dB.wav](https://github.com/user-attachments/files/34625024/spread-minus10dB.wav)
+
 
 - **声源轨迹**　同一段白噪声、同一条 Wwise 定位轨迹：左侧停留 3 秒，经正前方移向右侧 3 秒，再在右侧停留 3 秒。
 - **效果设置**　Crossfeed 使用默认 Feed 0.316、Gain **0 dB**；Spread 版本不经过 Crossfeed，两端对侧比主侧低约 10 dB。三份试听使用相同的整体播放衰减。
-- **结果**　本段整段立体声 RMS 仅下降约 **0.38 dB**，电平差异较小
+- **结果**　本段整段立体声 RMS 仅下降约 **0.38 dB**，电平差异较小。
 
 ![原声与新版 Crossfeed 的 RMS 对比，每窗 100 ms](docs/rms-comparison.png)
 
@@ -133,7 +135,7 @@ Soft Clip 在采样峰值超过 0.85 时平滑压缩，输出采样幅度限制�
    .\install.ps1 -WwiseRoot $WwiseInstall -RuntimeBinDirectories $PluginDirs -Apply
    ```
 
-4. 确认每个目标目录中都有 `Crossfeed.dll`。Unity 项目还需检查 DLL 的 Windows x86_64 导入设置。重新生成 Windows SoundBanks 并同步到游戏项目。
+4. 确认每个目标目录中都有 `Crossfeed.dll`。Unity 项目可能还需检查 DLL 的 Windows x86_64 导入设置。重新生成 Windows SoundBanks 并同步到游戏项目。
 
 ## V. 版本迁移
 
